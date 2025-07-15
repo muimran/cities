@@ -1,6 +1,6 @@
 function getCircleRadius(tweetCount) {
     const baseRadius = 1.5; // Base radius in pixels
-    const scaleFactor = 0.30; // Scale factor for additional size based on tweets
+    const scaleFactor = 0.02; // Scale factor for additional size based on tweets
     return baseRadius + (Math.sqrt(tweetCount) * scaleFactor); 
 }
 
