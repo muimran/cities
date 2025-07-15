@@ -1,8 +1,9 @@
 function getCircleRadius(tweetCount) {
-    const baseRadius = 1.5; // Base radius in pixels
-    const scaleFactor = 0.02; // Scale factor for additional size based on tweets
-    return baseRadius + (Math.sqrt(tweetCount) * scaleFactor); 
+    const baseRadius = 5;
+    const scaleFactor = 8;
+    return baseRadius + (Math.log10(tweetCount) * scaleFactor);
 }
+
 
 function createMap(cityData) {
     let map = L.map('map').setView([20, 0], 2);
