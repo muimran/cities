@@ -11,19 +11,28 @@ function getCircleRadius(tweetCount, scaleFactor, baseRadius) {
 }
 
 // Create the Leaflet map and add proportional circles
+// Create the Leaflet map and add proportional circles
 function createMap(cityData) {
     let map = L.map('map').setView([20, 0], 2);
 
     L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png?api_key=326d8a1b-041f-44ad-aa58-fdfdce54c9ca', {
         maxZoom: 18,
-        attribution: 'Map data &copy; ...'
+        attribution: 'Map data © ...'
     }).addTo(map);
 
     const baseRadius = 5;               // Minimum circle radius in pixels
     const maxRadius = 20;               // Maximum circle radius in pixels
     const scaleFactor = getAutoScaleFactor(cityData, maxRadius, baseRadius);
 
+    // DEBUG: Check the entire data array received from the CSV file.
+    console.log("Data received from CSV:", cityData);
+
     cityData.forEach(city => {
+        // DEBUG: Log each city object as it is being processed.
+        // Look closely at the property names here. Are they "City", "LAT", "LON"? Or something else?
+        console.log("Processing city:", city);
+
+        // Check if the required properties exist and are not empty.
         if (city.LAT && city.LON && city.Tweets) {
             let tweetCount = parseFloat(city.Tweets);
             let circleRadius = getCircleRadius(tweetCount, scaleFactor, baseRadius);
@@ -50,10 +59,13 @@ function createMap(cityData) {
             L.marker([city.LAT, city.LON], { icon: customIcon })
                 .addTo(map)
                 .bindPopup(`<strong>${city.City}</strong><br>Tweets: ${city.Tweets}`);
+        } else {
+            // DEBUG: If a city is skipped, this will log it to the console.
+            // This will help you find rows with missing data or incorrect headers.
+            console.log("Skipping city due to missing data:", city);
         }
     });
 }
-
 // Load CSV and build the map
 Papa.parse('cities.csv', {
     download: true,
