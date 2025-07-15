@@ -20,7 +20,7 @@ function createMap(cityData) {
     }).addTo(map);
 
     const baseRadius = 5;               // Minimum circle radius in pixels
-    const maxRadius = 60;               // Maximum circle radius in pixels
+    const maxRadius = 20;               // Maximum circle radius in pixels
     const scaleFactor = getAutoScaleFactor(cityData, maxRadius, baseRadius);
 
     cityData.forEach(city => {
