@@ -35,7 +35,7 @@ function createMap(cityData) {
                 background-color: #1434A4;
                 border: 2px solid #0B257A;      /* ADD THIS LINE for the outline */
                 border-radius: 50%;
-                opacity: 0.4;                   /* CHANGE THIS VALUE for opacity */
+                opacity: 0.7;                   /* CHANGE THIS VALUE for opacity */
                 width: ${circleRadius * 2}px;
                 height: ${circleRadius * 2}px;
                 display: block;
