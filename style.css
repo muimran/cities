@@ -13,4 +13,21 @@ body { margin: 0; padding: 0; }
         50% { transform: scale(1.5); }
         100% { transform: scale(1); }
     }
+
+
+    /* In your style.css file */
+
+/* --- Style the main popup box --- */
+.leaflet-popup-content-wrapper {
+    background: #2c3e50;  /* Change this to your desired background color */
+    color: #ffffff;       /* Change this to a contrasting text color (e.g., white) */
+    border-radius: 5px;
+    opacity: 0.;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4); /* Optional: adds a nice shadow */
+}
+
+/* --- Style the little triangle tip --- */
+.leaflet-popup-tip {
+    background: #2c3e50;  /* IMPORTANT: This MUST match the wrapper's background */
+}
 </style>

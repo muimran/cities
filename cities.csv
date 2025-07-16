@@ -1,18 +1,29 @@
-City,LAT,LON,Tweets
-France,46.2276,2.2137,220629.54
-Philippines,13.41,122.56,969195.9
-United Arab Emirates,23.4241,53.8478,1721014.8
-Taiwan,23.6978,120.9605,4575515.74
-Malaysia,4.2105,101.9758,28486641.88
-Netherlands,52.1326,5.2913,28839198.85
-Bulgaria,42.7339,25.4858,30045005.81
-China,35.8617,104.1954,35983783.59
-United Kingdom,55.3781,-3.436,68502749.8
-Czech Republic,49.8175,15.473,182348956.3
-Turkey,38.9637,35.2433,344177365.9
-Switzerland,46.8182,8.2275,443233241
-Singapore,1.3521,103.8198,567615538.1
-Germany,51.1657,10.4515,602948697
-United States,37.0902,-95.7129,634697336.4
-Canada,56.1304,-106.3468,884559697
-Cyprus,35.1264,33.4299,2098832200
+City,LAT,LON,Amount,Description
+France,46.2276,2.2137,220629.54,
+Philippines,13.41,122.56,969195.9,
+United Arab Emirates,23.4241,53.8478,1721014.8,
+Taiwan,23.6978,120.9605,4575515.74,
+Malaysia,4.2105,101.9758,28486641.88,
+Netherlands,52.1326,5.2913,28839198.85,
+Bulgaria,42.7339,25.4858,30045005.81,
+China,35.8617,104.1954,35983783.59,
+United Kingdom,55.3781,-3.436,68502749.8,
+Czech Republic,49.8175,15.473,182348956.3,
+Turkey,38.9637,35.2433,344177365.9,
+Switzerland,46.8182,8.2275,443233241,
+Singapore,1.3521,103.8198,567615538.1,
+Germany,51.1657,10.4515,602948697,
+United States,37.0902,-95.7129,634697336.4,"Bangladesh Police imported Tk 116,479,500.86 worth of surveillance equipment from USA
+
+| National Telecommunications Monitoring Centre imported Tk 597,625,153.91 worth of surveillance equipment from USA
+
+
+| Vehere Interactive Pvt Ltd exported surveillance equipment worth Tk 346,629.98.
+
+| Redington Distribution Pte Ltd exported surveillance equipment worth Tk 35,983,783.59.
+
+| Teledyne FLIR Detection, Inc. (USA) exported surveillance equipment worth Tk 116,479,500.86.
+
+| Yaana Technologies (US) exported surveillance equipment worth Tk 561,294,740.34."
+Canada,56.1304,-106.3468,884559697,
+Cyprus,35.1264,33.4299,2098832200,
