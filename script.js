@@ -12,6 +12,7 @@ function getCircleRadius(tweetCount, scaleFactor, baseRadius) {
 
 // Create the Leaflet map and add proportional circles
 // Create the Leaflet map and add proportional circles
+// Create the Leaflet map and add proportional circles
 function createMap(cityData) {
     let map = L.map('map').setView([20, 0], 2);
 
@@ -20,34 +21,30 @@ function createMap(cityData) {
         attribution: 'Map data © ...'
     }).addTo(map);
 
-    const baseRadius = 2;               // Minimum circle radius in pixels
-    const maxRadius = 30;               // Maximum circle radius in pixels
+    const baseRadius = 2;
+    const maxRadius = 30;
     const scaleFactor = getAutoScaleFactor(cityData, maxRadius, baseRadius);
 
-    // DEBUG: Check the entire data array received from the CSV file.
-    console.log("Data received from CSV:", cityData);
-
     cityData.forEach(city => {
-        // DEBUG: Log each city object as it is being processed.
-        // Look closely at the property names here. Are they "City", "LAT", "LON"? Or something else?
-        console.log("Processing city:", city);
-
-        // Check if the required properties exist and are not empty.
         if (city.LAT && city.LON && city.Tweets) {
             let tweetCount = parseFloat(city.Tweets);
             let circleRadius = getCircleRadius(tweetCount, scaleFactor, baseRadius);
 
+            // --- CHANGES ARE HERE ---
             let markerHtmlStyles = `
                 background-color: #1434A4;
+                border: 2px solid #0B257A;      /* ADD THIS LINE for the outline */
                 border-radius: 50%;
-                opacity: 0.85;
+                opacity: 0.9;                   /* CHANGE THIS VALUE for opacity */
                 width: ${circleRadius * 2}px;
                 height: ${circleRadius * 2}px;
                 display: block;
                 position: relative;
+                box-sizing: border-box;         /* ADD THIS for better size calculation with border */
                 transform-origin: 50% 50%;
                 animation: grow-shrink 1.5s ease-out forwards;
             `;
+            // --- END OF CHANGES ---
 
             let customIcon = L.divIcon({
                 className: "animated-marker",
@@ -59,10 +56,6 @@ function createMap(cityData) {
             L.marker([city.LAT, city.LON], { icon: customIcon })
                 .addTo(map)
                 .bindPopup(`<strong>${city.City}</strong><br>Tweets: ${city.Tweets}`);
-        } else {
-            // DEBUG: If a city is skipped, this will log it to the console.
-            // This will help you find rows with missing data or incorrect headers.
-            console.log("Skipping city due to missing data:", city);
         }
     });
 }
