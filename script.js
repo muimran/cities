@@ -20,8 +20,8 @@ function createMap(cityData) {
         attribution: 'Map data © ...'
     }).addTo(map);
 
-    const baseRadius = 5;               // Minimum circle radius in pixels
-    const maxRadius = 20;               // Maximum circle radius in pixels
+    const baseRadius = 2;               // Minimum circle radius in pixels
+    const maxRadius = 30;               // Maximum circle radius in pixels
     const scaleFactor = getAutoScaleFactor(cityData, maxRadius, baseRadius);
 
     // DEBUG: Check the entire data array received from the CSV file.
